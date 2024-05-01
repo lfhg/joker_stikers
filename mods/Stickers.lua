@@ -6,20 +6,21 @@ table.insert(mods,
         mod_id = "joker_stickers",
         name = "Show Joker Stickers",
         author = "Hatus",
-        version = "1.0.1e",
+        version = "1.0.1f",
         description = {
             "Shows the stake completion stickers on Jokers for easier Completionist++ hunting.",
         },
         enabled = true,
         on_enable = function()
             -- changes png
-            local patch_before = "{name = 'stickers', path = \"resources/textures/\"..self.SETTINGS.GRAPHICS.texture_scaling..\"x/stickers.png\",px=71,py=95},"
-            local patch = [[
-                {name = 'stickers', path = "pack/"..self.SETTINGS.GRAPHICS.texture_scaling.."x/stickers_mod.png",px=71,py=95},
-            ]]
-            local fun_name = "Game:set_render_settings"
-            local file_name = "game.lua"
-            inject(file_name, fun_name, patch_before:gsub("([^%w])", "%%%1"), patch)
+            -- patch 1.0.1f change: no need to change the png anymore
+--             local patch_before = "{name = 'stickers', path = \"resources/textures/\"..self.SETTINGS.GRAPHICS.texture_scaling..\"x/stickers.png\",px=71,py=95},"
+--             local patch = [[
+--                 {name = 'stickers', path = "pack/"..self.SETTINGS.GRAPHICS.texture_scaling.."x/stickers_mod.png",px=71,py=95},
+--             ]]
+--             local fun_name = "Game:set_render_settings"
+--             local file_name = "game.lua"
+--             inject(file_name, fun_name, patch_before:gsub("([^%w])", "%%%1"), patch)
 
             -- sets win sticker on creation of a joker
             local patch = [[
@@ -65,11 +66,12 @@ table.insert(mods,
         end,
 
         -- reloads png when mod is loaded
-        on_post_update = function()
-            if not stickers_loaded then
-                G:set_render_settings()
-                stickers_loaded = true
-            end
-        end
+        -- patch 1.0.1f change: no need to change the png anymore
+--         on_post_update = function()
+--             if not stickers_loaded then
+--                 G:set_render_settings()
+--                 stickers_loaded = true
+--             end
+--         end
     }
 )
