@@ -1,7 +1,8 @@
 # joker_stikers
 Mod for the game Balatro to show stake completion stickers on jokers.
-Tested on release version 1.0.0n and beta branch 1.0.1e
+Last updated for main version 1.0.1f
 
-![image](https://github.com/lfhg/joker_stikers/assets/79528259/24b7b76b-9d16-40d4-ac5e-aae93a73bcc4)
+![image](https://github.com/lfhg/joker_stikers/assets/79528259/1f2a85a9-6356-4dc8-83b7-d664f436eef5)
+
 
 Needs https://github.com/balamod/balamod installed.
